@@ -141,21 +141,21 @@ The tool employs physics-based models to simulate transformer behavior, using ma
   `[M] * d^2u/dt^2 + [C] * du/dt + [K] * u = F`
   where `M` is mass matrix, `C` is damping matrix, `K` is stiffness matrix, F includes magnetostriction and Lorentz forces.
 - **Magnetostriction Strain**:
-  $epsilon_m$ = lambda_s * (B / B_s)^2
-  where lambda_s is magnetostriction coefficient, B_s = 2.0 T.
+  `epsilon_m` = `lambda_s * (B / B_s)^2`
+  where `lambda_s` is magnetostriction coefficient, `B_s` = 2.0 T.
 - **Magnetostriction Stress**:
-  sigma_m = E * epsilon_m
-  where E is Young’s modulus.
+  `sigma_m = E * epsilon_m`
+  where `E` is Young’s modulus.
 - **Electromagnetic Force**:
-  F_em = (B^2 * core_area) / (2 * mu_0 * depth)
+  `F_em = (B^2 * core_area) / (2 * mu_0 * depth)`
 - **Lorentz Force**:
-  F_lorentz = I * B_leakage / depth
+  `F_lorentz = I * B_leakage / depth`
 - **Acoustic Power**:
-  P_acoustic = rho_air * c_air * S * v_rms^2
-  where rho_air = 1.225 kg/m^3, c_air = 343 m/s, S is surface area, v_rms is RMS velocity.
+  `P_acoustic = rho_air * c_air * S * v_rms^2`
+  where `rho_air` = 1.225 kg/m^3, `c_air` = 343 m/s, `S` is surface area, `v_rms` is RMS velocity.
 - **Sound Pressure Level**:
-  SPL = 20 * log10(p_rms / p_0)
-  where p_rms = sqrt((P_acoustic * rho_air * c_air) / (4 * pi * r^2)), p_0 = 20e-6 Pa, r = 1 m.
+  `SPL = 20 * log10(p_rms / p_0)`
+  where `p_rms = sqrt((P_acoustic * rho_air * c_air) / (4 * pi * r^2))`, `p_0` = 20e-6 Pa, `r` = 1 m.
 
 ## Algorithms Utilized
 
@@ -175,15 +175,15 @@ The tool employs several algorithms to perform calculations and simulations effi
 
 - **Finite Element Method (FEM) for Thermal Simulation**:
   - Discretizes the 2D domain into a 20x10 triangular mesh.
-  - Assembles stiffness (K) and capacitance (C) matrices using element-wise contributions.
+  - Assembles stiffness (`K`) and capacitance (`C`) matrices using element-wise contributions.
   - Applies boundary conditions for convection and radiation.
   - Solves the transient heat equation using implicit time-stepping and sparse linear solvers (spla.spsolve).
   - Computes heat fluxes from temperature gradients.
 
 - **Finite Element Method (FEM) for Vibration Simulation**:
   - Uses a similar 20x10 triangular mesh.
-  - Assembles mass (M), damping (C), and stiffness (K) matrices based on material properties (Young’s modulus, Poisson’s ratio, density).
-  - Applies fixed boundary conditions at y=0.
+  - Assembles mass (`M`), damping (`C`), and stiffness (`K`) matrices based on material properties (Young’s modulus, Poisson’s ratio, density).
+  - Applies fixed boundary conditions at `y=0`.
   - Solves the harmonic vibration equation using a sparse least-squares solver (spla.lsqr) for complex displacements.
   - Computes acoustic noise from surface velocities.
 
