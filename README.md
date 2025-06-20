@@ -53,7 +53,7 @@ The design integrates multiple constraints (e.g., saturation limits, fill factor
 
 ## Code Structure
 
-The codebase is modular, with distinct files for each functional component, ensuring maintainability and reusability. The structure includes:
+The codebase is modular, with distinct files for each functional component, ensuring maintainability and reusability. 
 
 - **transformer.py**: The core `Transformer` class, containing the `calculate` method that performs all major computations (core sizing, turns, losses, inductances, flux densities, thermal and mechanical properties). It integrates helper classes for specific calculations.
 - **CoreSizing.py**: Implements the `CoreSizing` class, calculating core area using an empirical formula based on power, frequency, and transformer type.
@@ -77,7 +77,7 @@ Each module interacts with the `Transformer` class, ensuring consistent calculat
 
 ## Physics and Mathematical Models
 
-The tool employs physics-based models to simulate transformer behavior, using mathematical equations to describe electrical, magnetic, thermal, and mechanical phenomena. Key models and equations include:
+The tool employs physics-based models to simulate transformer behavior, using mathematical equations to describe electrical, magnetic, thermal, and mechanical phenomena. 
 
 ### Electrical Models
 - **Turns Ratio**: Adjusts for voltage regulation:
@@ -164,37 +164,30 @@ The tool employs several algorithms to perform calculations and simulations effi
 - **Core Sizing Algorithm**:
   - Uses an empirical formula to compute core area based on power and frequency.
   - Adjusts coefficients based on transformer and core type.
-
 - **Turns and Wire Gauge Selection**:
   - Calculates turns ratios with a regulation factor.
   - Selects wire gauges from an AWG table using a current density of 2 A/mm², choosing the smallest AWG meeting the area requirement.
-
 - **Interleaving and Layering Algorithm**:
   - Determines interleaving patterns (e.g., primary-secondary alternation) based on transformer type and winding counts.
   - Calculates layer counts using core area and wire diameters.
-
 - **Finite Element Method (FEM) for Thermal Simulation**:
   - Discretizes the 2D domain into a 20x10 triangular mesh.
   - Assembles stiffness (`K`) and capacitance (`C`) matrices using element-wise contributions.
   - Applies boundary conditions for convection and radiation.
   - Solves the transient heat equation using implicit time-stepping and sparse linear solvers (spla.spsolve).
   - Computes heat fluxes from temperature gradients.
-
 - **Finite Element Method (FEM) for Vibration Simulation**:
   - Uses a similar 20x10 triangular mesh.
   - Assembles mass (`M`), damping (`C`), and stiffness (`K`) matrices based on material properties (Young’s modulus, Poisson’s ratio, density).
   - Applies fixed boundary conditions at `y=0`.
   - Solves the harmonic vibration equation using a sparse least-squares solver (spla.lsqr) for complex displacements.
   - Computes acoustic noise from surface velocities.
-
 - **Steinmetz Loss Calculation**:
   - Applies the Steinmetz equation to compute hysteresis and eddy current losses.
   - Uses material-specific parameters for accuracy.
-
 - **Leakage Inductance Optimization**:
   - Iterates over interleaving factors (0.5 to 2.0) to compute leakage inductance.
   - Selects the configuration minimizing leakage inductance.
-
 - **Plotting Algorithms**:
   - Uses Matplotlib for static plots (e.g., flux density, loss bar charts, B-H curves).
   - Implements animations for transient thermal simulations, updating temperature contours and hotspot positions.
