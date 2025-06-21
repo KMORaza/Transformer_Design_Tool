@@ -325,7 +325,7 @@ These parameters influence core sizing, loss calculations, and electromagnetic p
 
 ---
 
-## Core-Type and Shell-Type Configurations
+## ② Core-Type and Shell-Type Configurations
 
 The Transformer Design Tool supports two core configurations: **Core-Type** and **Shell-Type**, which are selectable via a dropdown menu in each module's GUI (e.g., Multi-Winding, Core Saturation, Thermal Simulation). These configurations influence magnetic flux paths, core sizing, winding arrangements, and loss calculations, impacting overall transformer performance. The key functionalities include:
 
@@ -463,7 +463,7 @@ The core-type and shell-type configurations are seamlessly integrated, ensuring 
 
 ---
 
-## Interleaving and Layering Configuration
+## ③ Interleaving and Layering Configuration
 
 The interleaving and layering configuration tools determine the optimal arrangement of primary and secondary windings in a transformer.
 
@@ -612,7 +612,7 @@ The tools ensure that winding configurations are physically feasible (e.g., posi
 
 ---
 
-## Multi-Winding Feature in Transformer Design Tool
+## ④ Multi-Winding Feature in Transformer Design Tool
 
 The Multi-Winding feature supports the design of transformers with one primary winding and multiple secondary windings, catering to applications requiring multiple output voltages (e.g., power supplies with diverse voltage rails). 
 
@@ -701,7 +701,7 @@ The feature integrates with the `Transformer` class to perform calculations, ens
 
 ---
 
-## Magnetic Flux Density Visualization in Transformer Design Tool
+## ⑤ Magnetic Flux Density Visualization
 
 The module, implemented in `MagneticFluxDensity.py` and supported by `transformer.py` and `plot.py`, visualizes the magnetic flux density waveforms for primary and secondary windings over time. 
 
@@ -801,7 +801,7 @@ The module employs algorithms for computation and visualization, leveraging the 
 
 ---
 
-## Core Saturation Analysis
+## ⑥ Core Saturation Analysis
 
 The Core Saturation Analysis feature of the Transformer Design Tool evaluates the magnetic core's saturation behavior, determining whether the transformer operates within safe flux density limits. Implemented in `CoreSaturationAnalyzer.py` and supported by the `Transformer` class in `transformer.py`, this module calculates peak flux density, saturation status, and safety margin, visualizing the B-H curve to aid in transformer design. 
 
@@ -941,7 +941,7 @@ The Core Saturation Analysis feature employs the following algorithms to perform
 
 ---
 
-## Leakage and Stray Field Estimation 
+## ⑦ Leakage and Stray Field Estimation 
 
 The Leakage and Stray Field Estimation feature analyzes leakage inductance and stray magnetic fields in transformers, critical for assessing efficiency, electromagnetic interference, and design optimization. Implemented in `LeakageAndStrayFieldEst.py` and supported by calculations in `transformer.py`, this feature uses user inputs to compute and visualize results, leveraging physics-based models and numerical algorithms. 
 
@@ -1050,7 +1050,7 @@ The feature employs straightforward numerical algorithms to compute leakage indu
 
 ---
 
-## Winding Configuration Optimization 
+## ⑧ Winding Configuration Optimization 
 
 The Winding Configuration Optimization feature optimizes transformer winding parameters to minimize leakage inductance, enhancing performance. Implemented in `WindingConfigOptimizer.py`, this module uses the `Transformer` class to perform calculations and displays results via text output and plots. 
 
@@ -1161,7 +1161,7 @@ The optimization process employs algorithms to compute transformer parameters an
 
 ---
 
-## Core Loss and Copper Loss Estimation
+## ⑨ Core Loss and Copper Loss Estimation
 
 The Core Loss and Copper Loss Estimation implemented in `CoreLossCopperLossEst.py` and supported by `transformer.py`, calculates the core losses (hysteresis and eddy current) and copper losses in a transformer based on user inputs.
 
@@ -1333,7 +1333,7 @@ The `Transformer` class integrates helper classes:
 
 ---
 
-## Thermal Simulation (FEM) Feature in Transformer Design Tool
+## ⑩ Thermal Simulation
 
 The Thermal Simulation enables transient thermal analysis of transformers, modeling temperature distribution, heat transfer mechanisms, and hotspot locations. Implemented in `ThermalSimulationFEM.py`, this module simulates heat generation from core and copper losses, providing insights into thermal performance under specified operating conditions. 
 
@@ -1464,7 +1464,7 @@ Total heat loss comprises conduction, convection, and radiation:
 
 ---
 
-## Vibration and Acoustic Noise Modeling
+## ⑪ Vibration and Acoustic Noise Modeling
 
 The Vibration and Acoustic Noise Modeling feature of the Transformer Design Tool analyzes the mechanical vibrations and acoustic emissions of a transformer under operational conditions. This module, implemented in `VibrationAndAcousticNoiseModel.py`, uses finite element method (FEM) simulations to model the effects of magnetic forces, including magnetostriction and Lorentz forces, on the transformer's core and windings. 
 
@@ -1639,7 +1639,7 @@ The dominant frequencies of the noise are twice and four times the input frequen
 
 ---
 
-## Harmonic and Frequency Response Analysis (HFRA)
+## ⑫ Harmonic and Frequency Response Analysis (HFRA)
 
 The Harmonic and Frequency Response Analysis (HFRA) implemented in `HFRA.py`, simulates the mechanical and acoustic behavior of a transformer under harmonic excitation. It calculates displacement, resonant frequencies, and sound pressure levels, providing insights into vibration and noise characteristics. 
 
