@@ -612,7 +612,7 @@ The tools ensure that winding configurations are physically feasible (e.g., posi
 
 ---
 
-## ④ Multi-Winding Feature in Transformer Design Tool
+## ④ Multi-Winding
 
 The Multi-Winding feature supports the design of transformers with one primary winding and multiple secondary windings, catering to applications requiring multiple output voltages (e.g., power supplies with diverse voltage rails). 
 
