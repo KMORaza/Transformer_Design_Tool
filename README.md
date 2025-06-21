@@ -2,7 +2,7 @@
 
 The Transformer Design Tool provides a suite of modules for analyzing and designing transformers, focusing on electrical, magnetic, thermal, mechanical, and acoustic performance.
 
-## Functioning
+## _Functioning_
 
 - **Main Application**: Launches the main window, providing access to all analysis modules.
 - **Multi-Winding Transformer Design**: Designs transformers with multiple secondary windings, calculating turns, wire gauges, and flux densities.
@@ -21,7 +21,7 @@ The Transformer Design Tool provides a suite of modules for analyzing and design
 
 The tool uses a centralized `Transformer` class to perform core calculations, integrating results across modules for consistency.
 
-## Simulation Logic
+## _Simulation Logic_
 
 Simulations are driven by user inputs (e.g., voltages, frequency, power, material properties) and rely on physics-based models implemented in the `Transformer` class. 
 
@@ -37,7 +37,7 @@ Simulations are driven by user inputs (e.g., voltages, frequency, power, materia
 
 Each module interfaces with the `Transformer` class, passing inputs and receiving a dictionary of results for display and plotting.
 
-## Design Logic
+## _Design Logic_
 
 The design logic focuses on creating a transformer that meets user-specified electrical and physical requirements while optimizing performance. 
 
@@ -51,7 +51,7 @@ The design logic focuses on creating a transformer that meets user-specified ele
 
 The design integrates multiple constraints (e.g., saturation limits, fill factor, bobbin utilization) to produce a feasible transformer configuration.
 
-## Code Structure
+## _Code Structure_
 
 The codebase is modular, with distinct files for each functional component, ensuring maintainability and reusability. 
 
@@ -75,7 +75,7 @@ The codebase is modular, with distinct files for each functional component, ensu
 
 Each module interacts with the `Transformer` class, ensuring consistent calculations across the application.
 
-## Physics and Mathematical Models
+## _Physics and Mathematical Models_
 
 The tool employs physics-based models to simulate transformer behavior, using mathematical equations to describe electrical, magnetic, thermal, and mechanical phenomena. 
 
@@ -157,7 +157,7 @@ The tool employs physics-based models to simulate transformer behavior, using ma
   `SPL = 20 * log10(p_rms / p_0)`
   where `p_rms = sqrt((P_acoustic * rho_air * c_air) / (4 * pi * r^2))`, `p_0` = 20e-6 Pa, `r` = 1 m.
 
-## Algorithms Utilized
+## _Algorithms Utilized_
 
 The tool employs several algorithms to perform calculations and simulations efficiently:
 
@@ -196,7 +196,7 @@ These algorithms ensure accurate and efficient computation of transformer parame
 
 ---
 
-## Transformer Types
+## ① Transformer Types
 
 The Transformer Design Tool supports six transformer types, each with distinct applications and design considerations. The `Transformer` class in `transformer.py` centralizes calculations, adjusting parameters based on the selected type to model specific electrical, magnetic, thermal, and mechanical behaviors. 
 
