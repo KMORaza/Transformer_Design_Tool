@@ -194,6 +194,10 @@ The tool employs several algorithms to perform calculations and simulations effi
 
 These algorithms ensure accurate and efficient computation of transformer parameters, leveraging sparse matrix operations for FEM simulations and empirical models for rapid design iterations.
 
+## _Screenshots_
+
+![](https://github.com/KMORaza/Transformer_Design_Tool/blob/main/Transformer%20Design%20Tool/009/screenshot/screenshot.png)
+
 ---
 
 ## ① Transformer Types
